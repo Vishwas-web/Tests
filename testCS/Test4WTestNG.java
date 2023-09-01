@@ -44,6 +44,10 @@ package testCS;
 	        // Select country from dropdown
 	        clickAndSelectFromCountryDropdown("India");
 
+		// Find and click on the dropdown options (assuming they are 'li' elements)
+        	List<WebElement> ddOptions = wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath("//ul[@class='ui-autocomplete ui-front ui-menu ui-widget ui-widget-content ui-corner-all']/li")));
+        	clickOnWebEle("Hindi", ddOptions);
+
 	        // Select date of birth
 	        selectFromDropdown("//select[@type='text'][@placeholder='Year']", "2001");
 	        selectFromDropdown("//select[@type='text'][@placeholder='Month']", "April");
